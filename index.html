@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular 2</title>
+	<link rel="stylesheet" href="resources/semantic.min.css">
+	<link rel="stylesheet" href="resources/custom.css">
+	<script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="node_modules/es6-shim/es6-shim.js"></script>
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="node_modules/rxjs/bundles/Rx.js"></script>
+	<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+
+	<!-- Dodatkowe skrypty -->
+	<script src="resources/jquery.min.js"></script>
+	<script src="resources/semantic.min.js"></script>
+
+	<script>
+		System.config({
+			packages: {
+				app: {
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			}		
+		});
+		System.import('app/boot.js')
+			.then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+
+	<!-- Top -->
+
+	<div class="sk-top" id="top-header">
+		<div class="ui inverted segment sticky">
+			<div class="ui inverted secondary menu">
+				<div class="ui container">
+					<div class="ui secondary menu">
+						<a href="" class="active item">Start</a>
+						<a href="" class="item">Użytkownicy</a>
+						<a href="" class="item">Najwyżej oceniane</a>
+						<a href="" class="item">Popularne</a>					
+					</div>
+					<div class="right menu">
+						<button class="ui inverted button">Wyloguj</button>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- Tresc aplikacji -->
+	<div class="sk-content">
+		<div class="ui container">
+			<div class="ui two column stackable relaxed grid">
+				
+  				<div class="eleven wide column">
+
+				<articles></articles>
+
+					<!--
+  					<div class="sk-form-container">
+  						<form action="">
+  							<h3>Dodaj nowy artykuł</h3>
+  							<div class="ui form">
+								<div class="field ui error">
+									<label>Tytuł:</label>
+									<input type="text" name="title" />
+								</div>
+								<div class="field">
+									<label>Link:</label>
+									<input type="text" name="link" />
+								</div>
+								<div class="field">
+									<label>Opis (max 120 znaków):</label>
+									<input type="text" name="description" />
+								</div>
+								<div class="field">
+									<label>Obrazek (link):</label>
+									<input type="text" name="image" />
+								</div>
+								<div class="positive ui large button">Dodaj</div>
+  							</div>
+  						</form>
+  					</div>
+  					<div class="sk-main-list">
+  						<h3 class="sk-column-header">Najnowsze artykuły</h3>
+  						<div class="ui segment sk-list-item">
+  							<a href="">
+	  							<div class="column">
+		  							<div class="ui grid">
+										<div class="two wide center aligned column">
+											<div class="ui statistic">
+												<div class="value">12</div>
+												<div class="label">Głosów</div>
+											</div>
+											<div class="sk-list-item buttons">
+												<button class="ui tiny compact icon button">
+		  											<i class="plus icon"></i>
+												</button>												
+												<button class="ui tiny compact icon button">
+		  											<i class="minus icon"></i>
+												</button>												
+											</div>
+										</div>
+										<div class="fourteen wide column">
+											<img src="http://semantic-ui.com/images/logo.png" alt="obraz">
+											<div class="sk-list-item-right">
+												<h4>Semantic UI</h4>
+												<span class="label">http://semantic-ui.com</span>
+												<p>Semantic empowers designers and developers by creating a shared vocabulary for UI.</p> 									
+											</div>
+										</div>
+		  							</div>
+	  							</div>
+  							</a>
+  						</div>
+  						<div class="ui segment sk-list-item">
+  							<a href="">
+	  							<div class="column">
+		  							<div class="ui grid">
+										<div class="two wide center aligned column">
+											<div class="ui statistic">
+												<div class="value">5</div>
+												<div class="label">Głosów</div>
+											</div>
+											<div class="sk-list-item buttons">
+												<button class="ui tiny compact icon button">
+		  											<i class="plus icon"></i>
+												</button>												
+												<button class="ui tiny compact icon button">
+		  											<i class="minus icon"></i>
+												</button>												
+											</div>
+										</div>
+										<div class="fourteen wide column">
+											<img src="resources/images/ang.png" alt="obraz" class="floated left">
+											<div class="sk-list-item-right">
+												<h4>Angular 2</h4>
+												<span class="label">https://angular.io/</span>
+												<p>Headers may be oriented to give the hierarchy of a section in the context of the page.</p> 												
+											</div>
+										</div>
+		  							</div>
+	  							</div>
+  							</a>
+  						</div>
+  						<div class="ui segment sk-list-item">
+  							<a href="">
+	  							<div class="column">
+		  							<div class="ui grid">
+										<div class="two wide center aligned column">
+											<div class="ui statistic">
+												<div class="value">20</div>
+												<div class="label">Głosów</div>
+											</div>
+											<div class="sk-list-item buttons">
+												<button class="ui tiny compact icon button">
+	  												<i class="plus icon"></i>
+												</button>												
+												<button class="ui tiny compact icon button">
+	  												<i class="minus icon"></i>
+												</button>												
+											</div>
+										</div>
+										<div class="fourteen wide column">
+											<img src="http://bower.io/img/bower-logo.png" alt="obraz" class="floated left">
+											<div class="sk-list-item-right">
+												<h4>Co to jest Bower?</h4>
+												<span class="label">https://github.com/bower/bower</span>
+												<p>A header provides a short summary of content.</p>
+											</div>
+										</div>
+		  							</div>
+	  							</div>
+  							</a>
+  						</div>
+  						<div class="ui segment sk-list-item">
+  							<a href="">
+	  							<div class="column">
+		  							<div class="ui grid">
+										<div class="two wide center aligned column">
+											<div class="ui statistic">
+												<div class="value">15</div>
+												<div class="label">Głosów</div>
+											</div>
+											<div class="sk-list-item buttons">
+												<button class="ui tiny compact icon button">
+	  												<i class="plus icon"></i>
+												</button>												
+												<button class="ui tiny compact icon button">
+	  												<i class="minus icon"></i>
+												</button>												
+											</div>
+										</div>
+										<div class="fourteen wide column">
+											<img src="http://bower.io/img/bower-logo.png" alt="obraz" class="floated left">
+											<div class="sk-list-item-right">
+												<h4>Jak korzystać z GIT</h4>
+												<span class="label">http://strefakursow.pl/kursy/programowanie/kurs_git_-_system_kontroli_wersji.html</span>
+												<p>Foundation is a family of responsive front-end frameworks that make it easy to design.</p> 												
+											</div>
+										</div>
+		  							</div>
+	  							</div>
+  							</a>
+  						</div>
+  						<div class="ui segment sk-list-item">
+  							<a href="">
+	  							<div class="column">
+		  							<div class="ui grid">
+										<div class="two wide center aligned column">
+											<div class="ui statistic">
+												<div class="value">8</div>
+												<div class="label">Głosów</div>
+											</div>
+											<div class="sk-list-item buttons">
+												<button class="ui tiny compact icon button">
+	  												<i class="plus icon"></i>
+												</button>												
+												<button class="ui tiny compact icon button">
+	  												<i class="minus icon"></i>
+												</button>												
+											</div>
+										</div>
+										<div class="fourteen wide column">
+											<img src="https://placehold.it/80x80" alt="obraz" class="floated left">
+											<div class="sk-list-item-right">
+												<h4>Najlepszy framework front-end</h4>
+												<span class="label">http://foundation.zurb.com</span>
+												<p>A menu can take up only the space necessary to fit its content</p> 
+											</div>
+										</div>
+		  							</div>
+	  							</div>
+  							</a>
+  						</div>
+  					</div>
+  					-->
+  				</div>
+
+  				<div class="five wide column">
+  					<h3 class="sk-column-header">Statystyki</h3>
+  					<div class="ui violet inverted padded center aligned segment sk-stats">
+  						<div class="ui column center">
+	  						<div class="ui statistic">
+								<div class="value">7</div>
+								<div class="label">Artykułów</div>
+							</div>
+  						</div>
+  					</div>
+  					<div class="ui teal inverted padded center aligned segment sk-stats">
+  						<div class="ui column center">
+	  						<div class="ui statistic">
+								<div class="value">345</div>
+								<div class="label">Użytkowników</div>
+							</div>
+  						</div>
+  					</div>
+  					<div class="ui pink inverted padded center aligned segment sk-stats">
+  						<div class="ui column center">
+	  						<div class="ui statistic">
+								<div class="value">9980</div>
+								<div class="label">Komentarzy</div>
+							</div>
+  						</div>
+  					</div>
+  					<div class="sk-popular-users">
+  						<h3 class="sk-column-header">Najpopularniejsi użytkownicy</h3>
+  						<div class="ui two column grid">
+  							<div class="ui eight column">
+								<div class="ui card">
+  									<div class="image">
+	  									<img src="resources/images/avatar.png" alt="">
+  									</div>
+  									<div class="content">
+  										<a class="header">Paśnik</a>
+  									</div>
+  									<div class="extra content">
+  										<a href=""><i class="user icon"></i>6 obserwuje</a>
+  									</div>
+  								</div>
+  							</div>
+  							<div class="ui eight column">
+								<div class="ui card">
+  									<div class="image">
+	  									<img src="resources/images/avatar.png" alt="">
+  									</div>
+  									<div class="content">
+  										<a class="header">Krzysiek</a>
+  									</div>
+  									<div class="extra content">
+  										<a href=""><i class="user icon"></i>2 obserwuje</a>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Stopka -->
+	<footer class="red sk-footer">
+		<div class="ui container">
+			<a href="" class="item">Logowanie</a>
+			<a href="" class="item">FAQ</a>
+			<a href="" class="item">Pomoc</a>
+			<a href="" class="item">Zgłoś naduzycie</a>
+			<a href="" class="item">Kontakt</a>		
+		</div>
+	</footer>
+	<script>
+		$('.sticky').sticky();
+	</script>
+</body>
+</html>

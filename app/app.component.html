@@ -1,0 +1,30 @@
+<div class="sk-form-container">
+  	<form [ngFormModel]="articleForm" (ngSubmit)="onSubmit()">
+  		<h3>Dodaj nowy artykuł</h3>
+  		<div class="ui form">
+			<div class="field ui" [ngClass]="{error: !articleForm.find('title').valid && articleForm.find('title').touched}">
+				<label>Tytuł:</label>
+				<input type="text" name="title" [ngFormControl]="articleForm.controls['title']" />
+			</div>
+			<div class="field ui" [ngClass]="{error: !articleForm.find('title').valid && articleForm.find('link').touched}">
+				<label>Link:</label>
+				<input type="text" name="link" [ngFormControl]="articleForm.controls['link']"/>
+			</div>
+			<div class="field ui" [ngClass]="{error: !articleForm.find('title').valid && articleForm.find('description').touched}">
+				<label>Opis (max 120 znaków):</label>
+				<input type="text" name="description" [ngFormControl]="articleForm.controls['description']"/>
+			</div>
+			<div class="field ui" [ngClass]="{error: !articleForm.find('title').valid && articleForm.find('image').touched}">
+				<label>Obrazek (link):</label>
+				<input type="text" name="image" [ngFormControl]="articleForm.controls['image']"/>
+			</div>
+			<button type="submit" class="positive ui large button" [ngClass]="{disabled: !articleForm.valid}">Dodaj</button>
+  		</div>
+  	</form>
+</div>
+
+<div class="sk-main-list">
+  	<h3 class="sk-column-header">Najnowsze artykuły</h3>
+  	<single-article class="ui segment" *ngFor="#article of articles" [article]="article" (click)="onSelect(article, $event)"
+	  [class.raised]="article===selectedArticle"></single-article>
+</div>
